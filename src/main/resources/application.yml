@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: pkc-g2v23.us-east-1.aws.confluent.cloud:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='5C3BOH5RIVBNFEPD' password='YU+GbYK8/QGYF00HErxZCQ7mGYoKqD6k54Gdk9WRE/PGeQYBJN2S1/P+4NqIWAd1';
+      bootstrap-servers: pkc-g2v23.us-east-1.aws.confluent.cloud:9092
+      security:
+        protocol: SASL_SSL
